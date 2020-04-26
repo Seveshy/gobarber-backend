@@ -48,7 +48,7 @@ usersRouter.patch('/avatar', ensureAuthenticated, upload.single('avatar'), async
       avatarFilename: request.file.filename,
     });
 
-    console.log(user);
+    delete user.password;
 
     return response.json({ message: user });
   
