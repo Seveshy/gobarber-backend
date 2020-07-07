@@ -3,7 +3,7 @@ import AppError from '@shared/errors/AppErrors';
 
 import Appointment from '../infra/typeorm/entities/Appointments';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
-interface Request {
+interface IRequest {
   provider_id: string,
   date: Date
 }
@@ -11,7 +11,7 @@ interface Request {
 class CreateAppointmentService {
   constructor(private appointmentsRepository: IAppointmentsRepository) {}
 
-  public async execute({ date, provider_id }: Request): Promise<Appointment> {
+  public async execute({ date, provider_id }: IRequest): Promise<Appointment> {
     const appointmentDate = startOfHour(date);
 
     const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
