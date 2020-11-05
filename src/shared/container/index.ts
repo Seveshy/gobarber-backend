@@ -6,22 +6,23 @@ import './providers';
 import IAppoitnmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import AppointmentRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentRepository';
 
-
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UserRepository';
 
-// import IUserTokensRepository from '@modules/users/repositories/IUserTokenRepository';
-// import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
-
-
+import IUserTokenRepository from '@modules/users/repositories/IUserTokenRepository';
+import UserTokenRepository from '@modules/users/infra/typeorm/repositories/UserTokenRepository';
 
 container.registerSingleton<IAppoitnmentsRepository>(
     'AppointmentsRepository',
     AppointmentRepository
 );
 
-
 container.registerSingleton<IUsersRepository>(
     'UsersRepository',
     UsersRepository
+);
+
+container.registerSingleton<IUserTokenRepository>(
+    'UserTokenRepository',
+    UserTokenRepository
 );
