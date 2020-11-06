@@ -1,34 +1,11 @@
 import IMailProvider from '../models/IMailProvider';
-import nodemailer, { Transporter } from 'nodemailer';
+import ISendMailDTO from '../dtos/ISendMailDTO'
 
-export default class EtherealMailProvider implements IMailProvider {
-    private client: Transporter;
-    
-    constructor() {
-        nodemailer.createTestAccount().then(account => {
-            const transporter = nodemailer.createTransport({
-                host: account.smtp.host,
-                port: account.smtp.port,
-                secure: account.smtp.secure,
-                auth: {
-                    user: account.user,
-                    pass: account.pass
-                }
-            }); 
-    
-            this.client = transporter;
-        });
-    }
+export default class FakeMailProvider implements IMailProvider {
+    private messages: ISendMailDTO[] = [];
+   
 
-    public async sendMail(to: string, body: string): Promise<void> {
-        const message = this.client.sendMail({
-            from: 'Equipe GoBarber <equipe@gobarber.com.br>',
-            to,
-            subject: 'Recuperação de senha',
-            text: body
-        });
-
-        // console.log('Message sent: %s', message.messageId)
-        // console.log('Message sent: %s', message.getTestMessageUrl(message))
+    public async sendMail(message: ISendMailDTO): Promise<void> {
+        this.messages.push(message)
     }
 }

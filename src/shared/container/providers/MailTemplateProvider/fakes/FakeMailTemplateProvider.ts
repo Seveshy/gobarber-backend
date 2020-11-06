@@ -1,4 +1,3 @@
-import { parse } from 'date-fns';
 import IParseMailTemplateDTO from '../dtos/IParseMailTemplateDTO';
 import IMailTemplateProvider from '../models/IMailTemplateProvider';
 
@@ -10,4 +9,4 @@ class FakeMailTemplateMailProvider implements IMailTemplateProvider {
     }
 }
 
-export default FakeMailTemplateMailProvider;
+export default FakeMailTemplateMailProvider; 
