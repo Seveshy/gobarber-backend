@@ -5,7 +5,6 @@ import User from '../infra/typeorm/entities/User';
 
 import IHashProvider from '../providers/HashProviders/models/IHashProvider';
 import IUsersRepository from '../repositories/IUsersRepository';
-// import AppError from '@shared/errors/AppErrors';
 
 interface IRequest {
   name: string;
@@ -16,7 +15,7 @@ interface IRequest {
 }
 
 @injectable()
-class UpdateProfile {
+class UpdateProfileService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -64,4 +63,4 @@ class UpdateProfile {
   }
 } 
 
-export default UpdateProfile;
+export default UpdateProfileService;
