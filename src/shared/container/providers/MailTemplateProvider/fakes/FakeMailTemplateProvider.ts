@@ -1,13 +1,9 @@
-import { parse } from 'date-fns';
-import IParseMailTemplateDTO from '../dtos/IParseMailTemplateDTO';
 import IMailTemplateProvider from '../models/IMailTemplateProvider';
 
 class FakeMailTemplateMailProvider implements IMailTemplateProvider {
-    public async parse({ template, 
-    }: 
-        IParseMailTemplateDTO): Promise<string> {
-        return template;
+    public async parse(): Promise<string> {
+        return 'Mail content';
     }
 }
 
-export default FakeMailTemplateMailProvider;
+export default FakeMailTemplateMailProvider; 
