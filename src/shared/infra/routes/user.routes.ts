@@ -12,7 +12,7 @@ import UpdateUserAvatarService from '../../../modules/users/infra/services/Updat
 import ensureAuthenticated from '../../../modules/users/infra/http/middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 
 usersRouter.post('/', async (request, response) => {
   try {

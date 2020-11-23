@@ -3,7 +3,7 @@ import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
 import User from '../../infra/typeorm/entities/User';
 
-import ICreateUserDTO from '@modules/users/dtos/ICreateUsers';
+import ICreateUserDTO from '@modules/users/dtos/ICreateUsersDTO';
 import IFindAllProvidersDTO from '@modules/users/dtos/IFindAllProvidersDTO';
 
 
