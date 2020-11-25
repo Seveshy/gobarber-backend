@@ -4,7 +4,7 @@ import path from 'path'
 
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import IUsersRepository from '../repositories/IUsersRepository';
-import IUserTokensRepository from '../repositories/IUserTokenRepository';
+import IUserTokenRepository from '../repositories/IUserTokenRepository';
 
 interface IRequest {
     email: string;
@@ -19,8 +19,8 @@ class SendForgotPasswordEmailService {
         @inject('MailProvider')
         private mailProvider: IMailProvider,
 
-        @inject('UserTokensRepository')
-        private userTokensRepository: IUserTokensRepository,
+        @inject('UserTokenRepository')
+        private userTokenRepository: IUserTokenRepository,
     ) {}
 
     public async execute({email}: IRequest): Promise<void> {
@@ -30,7 +30,7 @@ class SendForgotPasswordEmailService {
             throw new AppError('User does not exists.');
         }
 
-      const { token } = await this.userTokensRepository.generate(user.id);
+      const { token } = await this.userTokenRepository.generate(user.id);
 
       const forgotPasswordTemplate = path.resolve(
           __dirname,
