@@ -35,8 +35,6 @@ class ListProviderAppointmentsService {
         year
     });
 
-    console.log('Buscou')
-
     await this.cacheProvider.save(
       cacheKey,
       appointments
