@@ -36,6 +36,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/cors": "^2.8.8",
     "@types/redis": "^2.8.28",
     "aws-sdk": "^2.796.0",
     "bcryptjs": "^2.4.3",
