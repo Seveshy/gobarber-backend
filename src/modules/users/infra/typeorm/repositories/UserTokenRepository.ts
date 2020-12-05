@@ -2,7 +2,7 @@ import { getRepository, Repository } from 'typeorm';
 
 import IUserTokenRepository from '@modules/users/repositories/IUserTokenRepository';
 
-import UserToken from '../../typeorm/entities/UserToken';
+import UserToken from '../entities/UserToken';
 
 class UsersTokensRepository  implements IUserTokenRepository {
   private ormRepository: Repository<UserToken>;
