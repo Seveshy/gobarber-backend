@@ -55,6 +55,7 @@
     "nodemailer": "^6.4.14",
     "pg": "^8.0.2",
     "rate-limiter-flexible": "^2.1.13",
+    "react-day-picker": "^7.4.8",
     "redis": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.3.0",
